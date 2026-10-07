@@ -44,8 +44,9 @@ streamlit run streamlit_app.py
 
 Projeto desenvolvido no âmbito de uma dissertação de Mestrado em Jornalismo.
 
-A aplicação constitui uma ferramenta de apoio à análise de narrativas mediáticas relacionadas com terrorismo e fenómenos associados, permitindo cruzar informação proveniente do arquivo da Lusa com dados do Global Terrorism Database.
+A aplicação constitui uma ferramenta de apoio à análise da cobertura mediática dos fenómenos do terrorismo, extremismo e radicalismo, permitindo cruzar informação proveniente do arquivo da Lusa com dados do Global Terrorism Database.
 
 ## Nota metodológica
 
 O corpus da Lusa foi construído a partir de ficheiros CSV previamente recolhidos e tratados durante a investigação. A aplicação publicada utiliza a base de dados DuckDB resultante desse processo.
+
