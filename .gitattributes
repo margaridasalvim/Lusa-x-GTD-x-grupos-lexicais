@@ -1,0 +1,2 @@
+db/analysis.duckdb filter=lfs diff=lfs merge=lfs -text
+data/gtd/gtd.csv filter=lfs diff=lfs merge=lfs -text
