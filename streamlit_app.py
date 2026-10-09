@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-LUSA ANALISE — LUSA × GTD (offline) — streamlit_app.py
+LUSA ANALISE — LUSA × GTD — streamlit_app.py
 
 Inclui:
 - Só Lusa (fixo): lower(fonte) LIKE '%lusa%'
@@ -58,7 +58,7 @@ from openpyxl.chart import LineChart, Reference
 # --------------------------------------------------
 # CONFIG
 # --------------------------------------------------
-st.set_page_config(page_title="Lusa análise (offline)", layout="wide")
+st.set_page_config(page_title="Lusa análise", layout="wide")
 
 # INICIO EXCERTO RELATORIO DE MESTRADO
 
@@ -83,7 +83,7 @@ if "mostrar_info_relatorio" not in st.session_state:
     st.session_state["mostrar_info_relatorio"] = False
 
 _rotulo_info = (
-    "Ocultar informações sobre o projeto"
+    "Informações sobre o projeto"
     if st.session_state["mostrar_info_relatorio"]
     else "Informações sobre o projeto"
 )
@@ -844,7 +844,7 @@ def build_detected_country_summary(df: pd.DataFrame) -> pd.DataFrame:
 # --------------------------------------------------
 # UI — Header
 # --------------------------------------------------
-st.title("Lusa análise (offline)")
+st.title("Lusa análise")
 st.caption(
     "Principal: place_country. Experimental: deteção automática de países no título em tabela separada."
 )
