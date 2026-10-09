@@ -50,3 +50,4 @@ A aplicação constitui uma ferramenta de apoio à análise da cobertura mediát
 
 O corpus da Lusa foi construído a partir de ficheiros CSV previamente recolhidos e tratados durante a investigação. A aplicação publicada utiliza a base de dados DuckDB resultante desse processo.
 
+## Enquadramento académico e metodológico

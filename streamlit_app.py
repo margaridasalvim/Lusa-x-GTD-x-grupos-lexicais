@@ -59,6 +59,71 @@ from openpyxl.chart import LineChart, Reference
 # CONFIG
 # --------------------------------------------------
 st.set_page_config(page_title="Lusa análise (offline)", layout="wide")
+
+# INICIO EXCERTO RELATORIO DE MESTRADO
+
+# Estilo visual do botão de informações
+st.markdown("""
+<style>
+div.st-key-btn_info_relatorio button {
+    background-color: #B22222 !important;
+    color: white !important;
+    border: 1px solid #B22222 !important;
+    font-weight: 600 !important;
+}
+div.st-key-btn_info_relatorio button:hover {
+    background-color: #8B1A1A !important;
+    color: white !important;
+    border-color: #8B1A1A !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+if "mostrar_info_relatorio" not in st.session_state:
+    st.session_state["mostrar_info_relatorio"] = False
+
+_rotulo_info = (
+    "Ocultar informações sobre o projeto"
+    if st.session_state["mostrar_info_relatorio"]
+    else "Informações sobre o projeto"
+)
+
+if st.button(_rotulo_info, key="btn_info_relatorio"):
+    st.session_state["mostrar_info_relatorio"] = (
+        not st.session_state["mostrar_info_relatorio"]
+    )
+
+if st.session_state["mostrar_info_relatorio"]:
+    st.markdown(
+        "**Projeto desenvolvido em 2026, no âmbito do relatorio "
+        "de mestrado em Jornalismo da NOVA FCSH.**"
+    )
+    st.markdown(
+        "O texto seguinte foi retirado do relatório de mestrado "
+        "no âmbito do qual foi desenvolvido este projeto."
+    )
+
+    _ficheiro_relatorio = Path(__file__).resolve().parent / "Texto_relatorio_mestrado.md"
+
+    if _ficheiro_relatorio.is_file():
+        _conteudo_relatorio = _ficheiro_relatorio.read_text(encoding="utf-8")
+
+        # Transformar os subtítulos numerados em títulos encarnados,
+        # apenas na apresentação da aplicação.
+        _conteudo_relatorio = re.sub(
+            r"(?ms)^\*\*2\.\d+\.?\s*(.*?)\*\*",
+            lambda m: '<h3 style="color: #B22222; font-weight: 700;">'
+            + " ".join(m.group(1).split())
+            + "</h3>",
+            _conteudo_relatorio,
+        )
+
+        st.markdown(_conteudo_relatorio, unsafe_allow_html=True)
+    else:
+        st.warning("Não foi encontrado o ficheiro Texto_relatorio_mestrado.md.")
+
+# FIM EXCERTO RELATORIO DE MESTRADO
+
 PROJECT_ROOT = Path(__file__).resolve().parent
 DB_PATH = PROJECT_ROOT / "db" / "analysis.duckdb"
 
@@ -1282,6 +1347,14 @@ else:
 # --------------------------------------------------
 st.subheader("Comparação Lusa × GTD — dia–país (ISO)")
 
+st.caption(
+    "Leitura da comparacao: a serie Lusa conta as noticias "
+    "que correspondem aos filtros selecionados e cujo pais esta identificado. "
+    "A serie GTD conta os atentados registados para o mesmo dia e pais. "
+    "A coincidencia de data e pais nao confirma que uma noticia corresponda "
+    "a um atentado especifico. Os resultados da Lusa variam consoante os filtros aplicados."
+)
+
 comp = pd.DataFrame()
 comp_show = pd.DataFrame()
 comp_cols = []
@@ -1630,3 +1703,4 @@ else:
         file_name=f"grafico_lusa_gtd_ano_{date_from}_{date_to}.xlsx",
         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     )
+
