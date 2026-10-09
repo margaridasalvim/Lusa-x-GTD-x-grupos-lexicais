@@ -1,4 +1,14 @@
-**2.1 Considerações
+**Autoria: Margarida Alvim**
+
+
+
+**Projeto: Lusa × GTD — Análise de títulos e terrorismo**
+
+
+
+**Contexto académico: Dissertação de Mestrado em Jornalismo, NOVA FCSH**
+
+**Considerações
 sobre o funcionamento da Global Terrorism Database:**
 
 O objetivo
@@ -40,7 +50,7 @@ diretas. É a totalidade do ato que é tida em conta e o ato é considerado
 intencional se pelo menos um dos planeadores teve as intenções já descritas.
 Por último, deve ser realizado fora das “atividades legitimas de guerra”,
 excluído do direito internacional humanitário, na medida em que alveja pessoas
-não-combatentes. 
+não-combatentes.
 
 As
 variáveis categóricas permitem ao utilizador registar quais os critérios de
@@ -50,7 +60,7 @@ incluem ataques em que restam dúvidas quanto aos critérios anteriores. Existe
 ainda o mecanismo de filtragem adicional “Dúvida sobre Terrorismo Propriamente
 Dito?”. Este é usado quando há sobreposições de definições entre terrorismo e
 outros crimes e violência política, como insurgências, crimes de ódio e crime
-organizado, nas fontes analisadas pelo GTD. 
+organizado, nas fontes analisadas pelo GTD.
 
 O GTD
 exclui planos ou conspirações que não foram tentados ou concretizados. No
@@ -69,7 +79,7 @@ elenca os ataques incluindo assassinato, sequestro, bombardeamento/explosão,
 ataque armado, ataque desarmado, entre outros. Um ataque desarmado causa danos
 físicos ou morte através de meios que não sejam explosivos, armas de fogo e
 armas brancas, mas pode envolver armas químicas, biológicas ou
-radiológicas/bombas sujas. 
+radiológicas/bombas sujas.
 
 A
 informação sobre a vítima/alvo inclui o tipo de vítima, nacionalidade e nome da
@@ -91,7 +101,7 @@ atacante contextualizando o incidente. Estes dados não representam entidades
 distintas, não são mutuamente exclusivas e não caracterizam o comportamento de
 uma população ou movimento ideológico, adverte o manual.
 
-**2.2 Método
+**Método
 de recolha de dados do arquivo da Lusa e do GTD:**
 
 O arquivo
@@ -111,7 +121,7 @@ se tratava de um trabalho académico, em formato de relatório ou tese. No
 entanto, o modelo de IA generativo rapidamente "induziu" os
 objetivos. Também foram dados ficheiros CVS do arquivo da Lusa e do GTD para a
 análise das palavras necessárias para escrever o código o programa, como foi o
-caso das listas descritas. 
+caso das listas descritas.
 
 Neste
 caso, o objetivo foi criar um programa com todas as variáveis de pesquisa
@@ -121,7 +131,7 @@ exportar as tabelas dos resultados em formato CVS, compatíveis com o Excel. O
 programa foi codificado *Power Shell*, em “linguagem” *Python***,**
 com a inclusão do *DuckDB* para processar os ficheiros CVS. E com o *layout*,
 organização e exposição no formato da *app* *Streamlit*, por sugestão
-do Chat GPT. 
+do Chat GPT.
 
 Os dados
 provenientes do GTD e os títulos e informação adjacente do arquivo da Lusa
@@ -129,7 +139,7 @@ foram transferidos no formato original, em CVS. O CVS do GTD inclui 209.706
 linhas, cada uma corresponde a um incidente registado. Já o programa **DuckDB** é
 utilizado para “contabilizar” cerca de 129.456 linhas, cada uma correspondendo
 a uma notícia, que pode estar repetida, por ter sido publicada mais do que uma
-vez no arquivo da Lusa. 
+vez no arquivo da Lusa.
 
 O programa
 funciona em três camadas, todas concebidas com recurso ao Chat GPT. Na camada
@@ -149,7 +159,7 @@ dezembro de 2025, excetuando alguns meses em três períodos diferentes, alturas
 em que o sistema operativo do arquivo da Lusa foi alterado. É capaz de filtrar
 por país e tipo de ação, sendo possível, também, pesquisar palavras soltas.
 Contém a variável de pesquisa das palavras-chave apenas no título, ou no título
-e nas palavras-chave extraídas do texto. 
+e nas palavras-chave extraídas do texto.
 
 O filtro
 “violência” permite ver apenas os títulos que referem violência, excluir
@@ -171,7 +181,7 @@ notícia é sobre política, através da presença de certas palavras nos títul
 Para a política nacional foram listados os partidos políticos e com palavras
 ligadas à política portuguesa, como governo, legislativas,
 presidenciais, autárquicas, assembleia da república, ministro / ministra, entre
-outras. 
+outras.
 
 Para a
 política internacional a lista contém palavras ligadas às relações
@@ -181,7 +191,7 @@ internacionais, como “diplomacia/diplomático”, “política externa”,
 organizações e instituições internacionais inclui “União Europeia”, “ONU/Nações
 Unidas”, “NATO/OTAN”, “G7”, “G20”, “BRICS”. Se uma das palavras listadas surgir
 no título, o programa seleciona-a como podendo ser sobre política portuguesa
-e/ou externa. 
+e/ou externa.
 
 O filtro
 de “autor” classifica o sujeito do título como, "judicial",
@@ -212,7 +222,7 @@ maneira, foi incluído no programa um *script –* secção de código – que
 identifica os países no título e cria um registo ISO. Por exemplo, existe um
 título em que o país não é diretamente identificado, “Explosão em Bagdade mata
 10 pessoas”, mas que referencia a capital do Iraque. Em segundo, o país é
-convertido para ISO-2, como Portugal- PT, Iraque-IQ. 
+convertido para ISO-2, como Portugal- PT, Iraque-IQ.
 
 Por
 último, foi criado um dicionário de conversão do sistema ISO-2 para o ISO-3, o
@@ -224,7 +234,7 @@ Jugoslávia, Kosovo, West Bank/Cisjordânia, diretamente pelo Chat GPT. O
 cruzamento entre os dois grupos de dados é feito através da data e país, sendo
 que cada linha da tabela representa um evento num determinado dia e país.
 
-**2.3 Visualização:**
+**Visualização:**
 
 O programa
 mostra em tabela o número e os títulos em que certa palavra aparece. O gráfico
