@@ -859,6 +859,10 @@ st.caption(
 # SIDEBAR — FILTROS BASE
 # --------------------------------------------------
 with st.sidebar:
+    _, centro, _ = st.columns([1, 2, 1])
+    with centro:
+        st.image("logo_lxt.png", width=75)
+
     st.header("Filtros")
 
     dmin, dmax = date_bounds()
