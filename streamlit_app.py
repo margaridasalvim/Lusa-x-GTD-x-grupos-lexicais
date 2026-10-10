@@ -58,7 +58,13 @@ from openpyxl.chart import LineChart, Reference
 # --------------------------------------------------
 # CONFIG
 # --------------------------------------------------
-st.set_page_config(page_title="Lusa análise", layout="wide")
+from PIL import Image
+
+st.set_page_config(
+    page_title="Lusa análise",
+    page_icon=Image.open("logo_lxt.jpg"),
+    layout="wide"
+)
 
 # INICIO EXCERTO RELATORIO DE MESTRADO
 

@@ -3,3 +3,4 @@ duckdb
 pandas
 altair
 openpyxl
+Pillow
