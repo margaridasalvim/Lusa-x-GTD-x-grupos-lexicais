@@ -6,8 +6,6 @@
 
 
 
-**Contexto académico: Dissertação de Mestrado em Jornalismo, NOVA FCSH**
-
 **Considerações
 sobre o funcionamento da Global Terrorism Database:**
 
