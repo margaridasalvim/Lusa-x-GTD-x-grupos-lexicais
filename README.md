@@ -1,4 +1,6 @@
-﻿# Lusa × GTD — Análise de títulos e terrorismo
+# Lusa × GTD — Análise de títulos e terrorismo
+
+**[Abrir aplicação Lusa × GTD](https://lusa-gtd-grupos-lexicais.streamlit.app/)**
 
 Aplicação desenvolvida no âmbito de uma dissertação de Mestrado em Jornalismo para análise de títulos da agência Lusa e comparação com dados do Global Terrorism Database (GTD).
 
@@ -49,5 +51,3 @@ A aplicação constitui uma ferramenta de apoio à análise da cobertura mediát
 ## Nota metodológica
 
 O corpus da Lusa foi construído a partir de ficheiros CSV previamente recolhidos e tratados durante a investigação. A aplicação publicada utiliza a base de dados DuckDB resultante desse processo.
-
-## Enquadramento académico e metodológico
